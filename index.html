@@ -4,353 +4,273 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#141419">
+<meta name="theme-color" content="#122040">
 <link rel="icon" href="data:,">
 <title>最新AI副業解禁セミナー 録画</title>
 <style>
 :root{
-  /* ── 無彩色ベース（ライト） ── */
-  --n-0:#ffffff; --n-50:#f3f6fc; --n-75:#e7ecf7;
-  --ink:#0a0d14; --ink-2:#404a5e; --ink-3:#6b7488;
-  --bar:#0a0d14;
-  --hair:rgba(10,13,20,.14);
-  --hair-2:rgba(10,13,20,.08);
-  /* ── 有彩色は2色だけ ── */
-  --blue:#12327f;      /* H≈222° 白地で読める濃度 */
-  --blue-dp:#0b2160;
-  --blue-ln:#b7c6ea;   /* 罫線・枠用 */
-  --blue-grad:linear-gradient(100deg,#0b2160 0%,#4a7ae8 38%,#1c4bbf 66%,#0b2160 100%);
-  --cta:#1a4fd6;       /* CTA */
-  --cta-d:#0f327f;
-  /* ── 書体 ── */
-  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
-  --disp:var(--sans);
-  /* ── 余白スケール（反復） ── */
-  --s1:8px; --s2:14px; --s3:22px; --s4:34px; --s5:52px;
-  --pad:20px; --col:560px;
+  --ink:#122040;
+  --ink-soft:#4a5a78;
+  --accent:#2563eb;
+  --accent-dark:#1d4ed8;
+  --line:#dde5f2;
+  --bg:#f4f7fd;
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
 body{
-  font-family:var(--sans); font-weight:500;
-  font-size:16px; line-height:1.85;
-  color:var(--ink); background:var(--n-50);
-  -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased;
+  margin:0; padding:0;
+  background:var(--bg); color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
+  font-size:18px; line-height:1.8;
+  overflow-x:hidden;
 }
-.sheet{
-  max-width:720px; margin:0 auto; background:var(--n-0);
-  min-height:100vh; min-height:100dvh;
-  padding-bottom:env(safe-area-inset-bottom);
-  box-shadow:0 0 40px rgba(20,20,26,.07);
-}
-.wrap{max-width:var(--col); margin:0 auto; padding:0 var(--pad)}
+.wrap{max-width:760px; margin:0 auto; padding:26px 18px 56px}
 
-/* ══ 締切バー ══ */
+/* ── 締切バー ── */
 .limit{
   position:sticky; top:0; z-index:20;
-  background:var(--bar);
-  border-bottom:1px solid #2b57c4;
-  padding:9px var(--pad) 10px;
-  padding-top:calc(9px + env(safe-area-inset-top));
-  text-align:center;
+  background:var(--ink); color:#fff; text-align:center;
+  padding:10px 16px 12px;
+  padding-top:calc(10px + env(safe-area-inset-top));
 }
-.limit-l{
-  font-size:clamp(11px,3.2vw,13px); font-weight:700;
-  letter-spacing:.06em; color:#a8c0f2; white-space:nowrap;
-}
-.limit-c{
-  margin-top:2px;
-  font-size:clamp(17px,4.9vw,21px); font-weight:700;
-  color:#fff; font-variant-numeric:tabular-nums;
-  letter-spacing:.04em; white-space:nowrap;
-}
+.limit-l{font-size:15px; font-weight:600; color:#b9c9e8}
+.limit-c{font-size:22px; font-weight:800; line-height:1.4; font-variant-numeric:tabular-nums}
 .limit.is-end .limit-l{display:none}
-.limit.is-end .limit-c{font-size:14px; color:#a8c0f2; letter-spacing:.08em}
+.limit.is-end .limit-c{font-size:17px; color:#b9c9e8}
 
-/* ══ タイトル ══ */
-.head{padding:var(--s5) var(--pad) var(--s4); text-align:center}
-.ttl{margin:0}
-.eyebrow{
-  display:block; font-family:var(--sans);
-  font-size:clamp(12px,3.4vw,14px); font-weight:700;
-  letter-spacing:.16em; text-indent:.16em; color:var(--blue);
+/* ── ヘッダー ── */
+header{text-align:center; margin-bottom:30px}
+h1{
+  font-size:30px; line-height:1.45; margin:0 0 12px;
+  font-weight:800; letter-spacing:.01em;
 }
-.rec{
-  display:block; margin-top:var(--s3);
-  padding:var(--s2) 0 calc(var(--s2) + 3px);
-  border-top:1px solid var(--blue-ln); border-bottom:1px solid var(--blue-ln);
-  font-family:var(--disp); font-weight:700;
-  font-size:clamp(40px,12vw,60px);
-  letter-spacing:.2em; text-indent:.2em; line-height:1.2;
-  background:var(--blue-grad); -webkit-background-clip:text; background-clip:text;
-  color:transparent; -webkit-text-fill-color:transparent;
-}
+h1 .rec{color:var(--accent)}
+.lead{margin:0; font-size:18px; color:var(--ink-soft); font-weight:600}
 
-/* ══ 動画 ══ */
-.stage{padding:0}
-.frame-in{
-  display:flex; width:100%; aspect-ratio:16/9;
-  background:#000; overflow:hidden;
-  border:1px solid var(--hair);
-  box-shadow:0 14px 34px rgba(20,20,26,.20);
+/* ── 共通ブロック ── */
+.block{
+  background:#fff; border:2px solid var(--line); border-radius:20px;
+  padding:22px 18px 24px; margin-bottom:26px;
+  box-shadow:0 6px 20px rgba(18,32,64,.06);
 }
-.frame-in iframe{flex:1 1 auto; align-self:stretch; border:0; display:block}
-.stage .note{
-  margin:var(--s2) auto 0; text-align:center;
-  font-size:13px; font-weight:500; color:var(--ink-3); line-height:1.8;
+.block-head{display:flex; align-items:center; gap:12px; margin-bottom:16px}
+.num{
+  flex:0 0 auto; width:46px; height:46px; border-radius:50%;
+  background:var(--accent); color:#fff;
+  font-size:20px; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
 }
+h2{font-size:23px; line-height:1.4; margin:0; font-weight:800}
+.note{margin:0 0 14px; font-size:16px; color:var(--ink-soft); font-weight:600}
+.note-last{margin:14px 0 0}
 
-/* ══ セクション見出し（反復パターン） ══ */
-.sec{padding:var(--s5) 0 0}
-.sec-label{
-  display:block; text-align:center;
-  font-size:12px; font-weight:700; letter-spacing:.3em; text-indent:.3em;
-  color:var(--blue);
+/* ── 動画 ── */
+.frame{
+  display:block; width:100%; aspect-ratio:16/9;
+  background:#0d1729; border-radius:14px; overflow:hidden;
 }
-.sec-h{
-  margin:var(--s1) 0 0; text-align:center;
-  font-family:var(--disp); font-weight:700;
-  font-size:clamp(22px,6vw,31px); letter-spacing:.01em;
-  color:var(--ink); line-height:1.5;
-}
-.sec-rule{width:44px; height:1px; margin:var(--s2) auto var(--s4); background:var(--blue-grad)}
+.frame iframe{width:100%; height:100%; border:0; display:block}
 
-/* ══ CTA ══ */
-.cta-block{padding:var(--s5) 0 0; text-align:center}
-.cta-lead{
-  margin:0 0 var(--s1);
-  font-family:var(--disp); font-weight:700;
-  font-size:clamp(19px,5.2vw,25px); letter-spacing:.01em;
-  color:var(--ink); line-height:1.55;
-}
-.cta-due{margin:0 0 var(--s3); font-size:13px; font-weight:700; letter-spacing:.01em; color:var(--blue)}
+/* ── セクション見出し ── */
+.sec-head{text-align:center; margin:6px 0 20px}
+.sec-head .kicker{margin:0 0 4px; font-size:16px; font-weight:600; color:var(--accent)}
+.sec-head h2{font-size:26px}
+
+/* ── ボタン ── */
 .pulse{display:block; transform-origin:center; animation:ctaPulse 2s ease-in-out infinite; will-change:transform}
-@keyframes ctaPulse{0%,100%{transform:scale(1)} 50%{transform:scale(var(--pulse,1.038))}}
+@keyframes ctaPulse{0%,100%{transform:scale(1)} 50%{transform:scale(var(--pulse,1.03))}}
 .pulse:hover,.pulse:focus-within{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.pulse{animation:none}}
-.cta{
-  display:flex; align-items:center; justify-content:center; gap:13px;
-  width:100%; margin:0 auto;
-  min-height:84px; padding:14px 18px;
-  background:linear-gradient(180deg,#3f76ee 0%,var(--cta) 52%,var(--cta-d) 100%);
-  border:1px solid var(--cta-d); border-radius:6px;
-  box-shadow:0 8px 22px rgba(26,79,214,.32);
-  color:#fff; font-family:var(--sans);
-  font-size:clamp(14px,4.1vw,22px); font-weight:700; line-height:1.5; letter-spacing:.01em;
-  text-decoration:none; cursor:pointer;
+.btn{
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  text-align:center; width:100%; min-height:72px; padding:16px 14px;
+  background:var(--accent); color:#fff;
+  font-family:inherit; font-size:18px; font-weight:800; line-height:1.45;
+  text-decoration:none; border:0; border-radius:14px;
+  box-shadow:0 5px 0 var(--accent-dark);
+  cursor:pointer;
 }
-.cta:active{transform:translateY(2px)}
-.cta[disabled]{background:linear-gradient(180deg,#dcdce2 0%,#c6c6cf 100%); border-color:#b9b9c3; cursor:default; color:#fff}
-.cta .mark{
-  flex:0 0 auto; width:46px; height:46px; background:#fff; border-radius:12px;
+.btn:active{transform:translateY(3px); box-shadow:0 2px 0 var(--accent-dark)}
+.btn[disabled]{background:#a9b6cc; box-shadow:0 5px 0 #8e9bb2; cursor:default}
+.btn .mark{
+  flex:0 0 auto; width:42px; height:42px; background:#fff; border-radius:11px;
   display:flex; align-items:center; justify-content:center;
 }
-.cta[disabled] .mark{background:#f0f0f3}
-.cta .txt{flex:0 1 auto; min-width:0; text-align:center}
-.cta .txt .l{display:block; white-space:nowrap}
-.cta .go{flex:0 0 auto; width:28px; height:28px}
-.cta-todo{margin:var(--s2) 0 0; font-size:13px; font-weight:700; color:var(--blue)}
+.btn .txt{flex:0 1 auto; min-width:0}
+.btn .txt .l{display:block; white-space:nowrap}
+.due .nb{white-space:nowrap}
+.btn .arrow{flex:0 0 auto; font-size:18px}
+.btn-note{margin:12px 0 0; text-align:center; font-size:15px; font-weight:600; color:var(--accent-dark)}
+.due{margin:0 0 14px; text-align:center; font-size:17px; font-weight:800; color:var(--accent-dark)}
 
-/* ══ 特典リスト（反復パターン） ══ */
+/* ── 特典カード ── */
 .gifts{list-style:none; margin:0; padding:0}
-.gifts li{margin:0 0 10px}
+.gifts li{margin:0 0 14px}
+.gifts li:last-child{margin-bottom:0}
 .g{
-  display:flex; align-items:center; gap:var(--s2);
-  background:var(--n-0); border:1px solid var(--hair);
-  border-radius:6px; padding:14px var(--s2);
-  text-decoration:none; color:var(--ink);
-  box-shadow:0 1px 0 rgba(20,20,26,.05);
+  display:flex; align-items:center; gap:12px;
+  background:#fff; border:2px solid var(--line); border-radius:20px;
+  padding:16px 16px; text-decoration:none; color:var(--ink);
+  box-shadow:0 6px 20px rgba(18,32,64,.06);
 }
-.g:active{background:var(--n-50)}
-.g-n{
-  flex:0 0 auto; width:38px; height:38px; border-radius:4px;
-  border:1px solid var(--blue-ln); background:var(--n-50);
-  display:flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:700; letter-spacing:.01em; color:var(--blue);
-}
+.g:active{transform:translateY(2px)}
 .g-t{flex:1 1 auto; min-width:0}
-.g-1{display:block; font-size:12px; font-weight:500; letter-spacing:.01em; color:var(--ink-3); line-height:1.6}
-.g-2{
-  display:block; font-family:var(--disp); font-weight:700;
-  font-size:clamp(16px,4.3vw,20px); letter-spacing:.01em;
-  color:var(--ink); line-height:1.5;
-}
-.g-a{flex:0 0 auto; width:18px; height:18px}
-.g.is-locked{background:var(--n-50); border-style:dashed; border-color:var(--blue-ln); box-shadow:none}
-.g.is-locked .g-n{border-style:dashed; background:var(--n-0)}
-.gift-cond{
-  margin:var(--s3) 0 0; padding-top:var(--s3);
-  border-top:1px solid var(--hair-2);
-  text-align:center; font-size:13px; font-weight:700;
-  letter-spacing:.01em; color:var(--blue); line-height:1.9;
-}
+.g-1{display:block; font-size:15px; font-weight:600; color:var(--ink-soft); line-height:1.6}
+.g-2{display:block; font-size:20px; font-weight:800; line-height:1.4}
+.g-a{flex:0 0 auto; font-size:20px; font-weight:800; color:var(--accent)}
+.g.is-locked{background:#f8fbff; border-style:dashed; box-shadow:none}
+.g.is-locked .num{background:#fff; color:var(--accent); border:2px solid var(--accent)}
 
-/* ══ 公開終了 ══ */
-.ended{display:none; padding:var(--s4) 0 0; text-align:center}
-.ended-box{border:1px solid var(--blue-ln); background:var(--n-50); padding:var(--s4) var(--s3)}
-.ended-box h2{
-  margin:0 0 var(--s2); font-family:var(--disp); font-weight:700;
-  font-size:20px; letter-spacing:.01em; color:var(--blue); line-height:1.6;
-}
-.ended-box p{margin:0; font-size:14px; font-weight:500; color:var(--ink-2); line-height:2}
+/* ── 終了パネル ── */
+.ended{display:none}
 
-.foot{margin-top:var(--s5); border-top:1px solid var(--hair-2)}
-
-@media (max-width:360px){
-  :root{--pad:16px; --s5:40px; --s4:26px}
-  .pulse{--pulse:1.024}
-  .cta{gap:9px; min-height:76px; padding:12px 12px}
-  .cta .mark{width:38px; height:38px; border-radius:9px}
-  .cta .go{width:23px; height:23px}
-  .g{gap:10px; padding:12px 11px}
-  .g-n{width:32px; height:32px; font-size:12px}
+@media (max-width:400px){
+  body{font-size:17px}
+  h1{font-size:26px}
+  h2{font-size:20px}
+  .sec-head h2{font-size:23px}
+  .btn{font-size:17px; gap:9px; padding:14px 12px}
+  .btn .mark{width:38px; height:38px; border-radius:10px}
+  .g{gap:10px; padding:14px 13px}
+  .g-2{font-size:18px}
+  .num{width:42px; height:42px; font-size:18px}
 }
 </style>
 </head>
 <body>
-<div class="sheet">
 
-  <!-- 締切バー -->
-  <div class="limit" id="limit">
-    <div class="limit-l">個別ロードマップ作成会 お申し込み締切</div>
-    <div class="limit-c" id="count">残り時間を計算しています</div>
-  </div>
+<!-- 締切バー -->
+<div class="limit" id="limit">
+  <div class="limit-l">個別ロードマップ作成会 お申し込み締切</div>
+  <div class="limit-c" id="count">残り時間を計算しています</div>
+</div>
 
-  <!-- タイトル -->
-  <header class="head">
-    <h1 class="ttl">
-      <span class="eyebrow">最新AI副業解禁セミナー</span>
-      <span class="rec">録画</span>
-    </h1>
+<div class="wrap">
+
+  <header>
+    <h1>最新AI副業解禁セミナー<br><span class="rec">録画</span></h1>
+    <p class="lead">上から順にご覧いただけます。</p>
   </header>
 
   <!-- 動画 -->
-  <section class="stage" id="stage">
-    <div class="wrap">
-      <div class="frame-in" id="frameIn"></div>
-      <p class="note">再生ボタンを押すと始まります。うまく映らないときは、ページを一度読み込み直してください。</p>
+  <div class="block" id="stage">
+    <div class="block-head">
+      <span class="num">1</span>
+      <h2>セミナー録画を見る</h2>
     </div>
-  </section>
+    <p class="note">再生ボタンを押すと始まります。</p>
+    <div class="frame" id="frameIn"></div>
+    <p class="note note-last">うまく映らないときは、ページを一度読み込み直してください。</p>
+  </div>
 
-  <!-- 公開終了パネル -->
-  <section class="ended" id="ended">
-    <div class="wrap">
-      <div class="ended-box">
-        <h2>お申し込みの受付は終了しました</h2>
-        <p>ご覧いただきありがとうございました。<br>個別ロードマップ作成会のお申し込みと録画の公開は<br>7月30日（木）23:59 をもって終了しました。<br>次回のご案内は公式LINEでお届けします。</p>
-      </div>
+  <!-- 終了パネル -->
+  <div class="block ended" id="ended">
+    <div class="block-head">
+      <span class="num">！</span>
+      <h2>お申し込みの受付は終了しました</h2>
     </div>
-  </section>
+    <p class="note">ご覧いただきありがとうございました。個別ロードマップ作成会のお申し込みと録画の公開は、7月30日（木）23:59 をもって終了しました。次回のご案内は公式LINEでお届けします。</p>
+  </div>
 
   <!-- CTA① -->
-  <div class="cta-block">
-    <div class="wrap">
-      <p class="cta-lead">個別ロードマップ作成会に参加する</p>
-      <p class="cta-due">お申し込みは 7月30日（木）23:59 まで</p>
-      <div class="pulse">
-        <button class="cta" disabled>
-          <span class="mark" aria-hidden="true">
-            <svg viewBox="0 0 44 44" width="36" height="36">
-              <path d="M22 6.5c8.8 0 16 5.7 16 12.7 0 4.2-2.6 8-6.5 10.3-3 1.9-7 3.2-8.5 3.6-.6.2-1-.2-.9-.9l.4-2.4c.1-.6-.2-1-.9-1.1C14 27.3 6 23.6 6 19.2 6 12.2 13.2 6.5 22 6.5z" fill="#06c755"/>
-              <text x="22" y="20.6" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9.6" font-weight="700" letter-spacing="0.4" fill="#ffffff">LINE</text>
-            </svg>
-          </span>
-          <span class="txt"><span class="l">特典受け取り＆</span><span class="l">個別ロードマップ会に</span><span class="l">参加する！</span></span>
-          <svg class="go" viewBox="0 0 40 40" aria-hidden="true">
-            <circle cx="20" cy="20" r="18" fill="#fff" opacity=".93"/>
-            <path d="M16 12l11 8-11 8z" fill="#1a4fd6"/>
-          </svg>
-        </button>
-      </div>
-      <p class="cta-todo">※リンクは準備中です。決まり次第ここに設置します</p>
+  <div class="block">
+    <div class="block-head">
+      <span class="num">2</span>
+      <h2>個別ロードマップ作成会に参加する</h2>
     </div>
+    <p class="due">お申し込みは<br><span class="nb">7月30日（木）23:59 まで</span></p>
+    <div class="pulse">
+      <button class="btn" disabled>
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44" width="34" height="34">
+            <path d="M22 6.5c8.8 0 16 5.7 16 12.7 0 4.2-2.6 8-6.5 10.3-3 1.9-7 3.2-8.5 3.6-.6.2-1-.2-.9-.9l.4-2.4c.1-.6-.2-1-.9-1.1C14 27.3 6 23.6 6 19.2 6 12.2 13.2 6.5 22 6.5z" fill="#06c755"/>
+            <text x="22" y="20.6" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9.6" font-weight="700" letter-spacing="0.4" fill="#ffffff">LINE</text>
+          </svg>
+        </span>
+        <span class="txt"><span class="l">特典受け取り＆</span><span class="l">個別ロードマップ会に</span><span class="l">参加する！</span></span>
+        <span class="arrow">▶</span>
+      </button>
+    </div>
+    <p class="btn-note cta-todo">※リンクは準備中です。決まり次第ここに設置します</p>
   </div>
 
-  <!-- 無料特典（いますぐ） -->
-  <section class="sec">
-    <div class="wrap">
-      <span class="sec-label">いますぐ受け取れる</span>
-      <h2 class="sec-h">無料特典</h2>
-      <div class="sec-rule"></div>
-      <ul class="gifts">
-        <li><a class="g" href="https://yuuyann0318.github.io/ai-shorts-monetize-map/" target="_blank" rel="noopener">
-          <span class="g-n">01</span>
-          <span class="g-t"><span class="g-1">AIショート動画</span><span class="g-2">収益化マップ</span></span>
-          <svg class="g-a" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="#12327f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a></li>
-        <li><a class="g" href="https://yuuyann0318.github.io/ai-fukugyo-ai-top3/" target="_blank" rel="noopener">
-          <span class="g-n">02</span>
-          <span class="g-t"><span class="g-1">AI副業</span><span class="g-2">いま始めるならTOP3</span></span>
-          <svg class="g-a" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="#12327f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a></li>
-        <li><a class="g" href="https://yuuyann0318.github.io/ai-fukugyo-roadmap-tokuten/" target="_blank" rel="noopener">
-          <span class="g-n">03</span>
-          <span class="g-t"><span class="g-1">月30万円目指す</span><span class="g-2">完全ロードマップ</span></span>
-          <svg class="g-a" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="#12327f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a></li>
-        <li><a class="g" href="https://yuuyann0318.github.io/ai-short-video-idea-tokuten/" target="_blank" rel="noopener">
-          <span class="g-n">04</span>
-          <span class="g-t"><span class="g-1">超初心者向け</span><span class="g-2">AI講座</span></span>
-          <svg class="g-a" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="#12327f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a></li>
-        <li><a class="g" href="https://yuuyann0318.github.io/ai-short-video-funnel-tokuten/" target="_blank" rel="noopener">
-          <span class="g-n">05</span>
-          <span class="g-t"><span class="g-1">AI×SNS</span><span class="g-2">収益化マニュアル</span></span>
-          <svg class="g-a" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="#12327f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a></li>
-      </ul>
-    </div>
-  </section>
+  <!-- 無料特典 -->
+  <div class="sec-head">
+    <p class="kicker">いますぐ受け取れる</p>
+    <h2>無料特典</h2>
+  </div>
+  <ul class="gifts">
+    <li><a class="g" href="https://yuuyann0318.github.io/ai-shorts-monetize-map/" target="_blank" rel="noopener">
+      <span class="num">01</span>
+      <span class="g-t"><span class="g-1">AIショート動画</span><span class="g-2">収益化マップ</span></span>
+      <span class="g-a" aria-hidden="true">›</span>
+    </a></li>
+    <li><a class="g" href="https://yuuyann0318.github.io/ai-fukugyo-ai-top3/" target="_blank" rel="noopener">
+      <span class="num">02</span>
+      <span class="g-t"><span class="g-1">AI副業</span><span class="g-2">いま始めるならTOP3</span></span>
+      <span class="g-a" aria-hidden="true">›</span>
+    </a></li>
+    <li><a class="g" href="https://yuuyann0318.github.io/ai-fukugyo-roadmap-tokuten/" target="_blank" rel="noopener">
+      <span class="num">03</span>
+      <span class="g-t"><span class="g-1">月30万円目指す</span><span class="g-2">完全ロードマップ</span></span>
+      <span class="g-a" aria-hidden="true">›</span>
+    </a></li>
+    <li><a class="g" href="https://yuuyann0318.github.io/ai-short-video-idea-tokuten/" target="_blank" rel="noopener">
+      <span class="num">04</span>
+      <span class="g-t"><span class="g-1">超初心者向け</span><span class="g-2">AI講座</span></span>
+      <span class="g-a" aria-hidden="true">›</span>
+    </a></li>
+    <li><a class="g" href="https://yuuyann0318.github.io/ai-short-video-funnel-tokuten/" target="_blank" rel="noopener">
+      <span class="num">05</span>
+      <span class="g-t"><span class="g-1">AI×SNS</span><span class="g-2">収益化マニュアル</span></span>
+      <span class="g-a" aria-hidden="true">›</span>
+    </a></li>
+  </ul>
 
   <!-- 参加特典 -->
-  <section class="sec">
-    <div class="wrap">
-      <span class="sec-label">参加した方だけ</span>
-      <h2 class="sec-h">作成会で受け取れる特典</h2>
-      <div class="sec-rule"></div>
-      <ul class="gifts">
-        <li><span class="g is-locked">
-          <span class="g-n">06</span>
-          <span class="g-t"><span class="g-1">伸びる理由と改善点をAIが分析</span><span class="g-2">ショート動画リサーチAI</span></span>
-        </span></li>
-        <li><span class="g is-locked">
-          <span class="g-n">07</span>
-          <span class="g-t"><span class="g-1">面倒な登録作業をまとめて自動化</span><span class="g-2">アカウント作成AI</span></span>
-        </span></li>
-        <li><span class="g is-locked">
-          <span class="g-n">08</span>
-          <span class="g-t"><span class="g-1">企画から投稿までの手順をまとめた1冊</span><span class="g-2">動画作成AIマニュアル</span></span>
-        </span></li>
-      </ul>
-      <p class="gift-cond">この3点は、個別ロードマップ作成会に<br>ご参加いただいた方にお渡しします。</p>
-    </div>
-  </section>
+  <div class="sec-head" style="margin-top:44px">
+    <p class="kicker">参加した方だけ</p>
+    <h2>作成会で受け取れる特典</h2>
+  </div>
+  <ul class="gifts">
+    <li><span class="g is-locked">
+      <span class="num">06</span>
+      <span class="g-t"><span class="g-1">伸びる理由と改善点をAIが分析</span><span class="g-2">ショート動画リサーチAI</span></span>
+    </span></li>
+    <li><span class="g is-locked">
+      <span class="num">07</span>
+      <span class="g-t"><span class="g-1">面倒な登録作業をまとめて自動化</span><span class="g-2">アカウント作成AI</span></span>
+    </span></li>
+    <li><span class="g is-locked">
+      <span class="num">08</span>
+      <span class="g-t"><span class="g-1">企画から投稿までの手順をまとめた1冊</span><span class="g-2">動画作成AIマニュアル</span></span>
+    </span></li>
+  </ul>
+  <p class="note" style="margin-top:16px;text-align:center">この3点は、個別ロードマップ作成会にご参加いただいた方にお渡しします。</p>
 
   <!-- CTA② -->
-  <div class="cta-block">
-    <div class="wrap">
-      <p class="cta-lead">この特典を受け取る</p>
-      <p class="cta-due">お申し込みは 7月30日（木）23:59 まで</p>
-      <div class="pulse">
-        <button class="cta" disabled>
-          <span class="mark" aria-hidden="true">
-            <svg viewBox="0 0 44 44" width="36" height="36">
-              <path d="M22 6.5c8.8 0 16 5.7 16 12.7 0 4.2-2.6 8-6.5 10.3-3 1.9-7 3.2-8.5 3.6-.6.2-1-.2-.9-.9l.4-2.4c.1-.6-.2-1-.9-1.1C14 27.3 6 23.6 6 19.2 6 12.2 13.2 6.5 22 6.5z" fill="#06c755"/>
-              <text x="22" y="20.6" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9.6" font-weight="700" letter-spacing="0.4" fill="#ffffff">LINE</text>
-            </svg>
-          </span>
-          <span class="txt"><span class="l">特典受け取り＆</span><span class="l">個別ロードマップ会に</span><span class="l">参加する！</span></span>
-          <svg class="go" viewBox="0 0 40 40" aria-hidden="true">
-            <circle cx="20" cy="20" r="18" fill="#fff" opacity=".93"/>
-            <path d="M16 12l11 8-11 8z" fill="#1a4fd6"/>
-          </svg>
-        </button>
-      </div>
-      <p class="cta-todo">※リンクは準備中です。決まり次第ここに設置します</p>
+  <div class="block" style="margin-top:34px">
+    <div class="block-head">
+      <span class="num">3</span>
+      <h2>この特典を受け取る</h2>
     </div>
+    <p class="due">お申し込みは<br><span class="nb">7月30日（木）23:59 まで</span></p>
+    <div class="pulse">
+      <button class="btn" disabled>
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 44 44" width="34" height="34">
+            <path d="M22 6.5c8.8 0 16 5.7 16 12.7 0 4.2-2.6 8-6.5 10.3-3 1.9-7 3.2-8.5 3.6-.6.2-1-.2-.9-.9l.4-2.4c.1-.6-.2-1-.9-1.1C14 27.3 6 23.6 6 19.2 6 12.2 13.2 6.5 22 6.5z" fill="#06c755"/>
+            <text x="22" y="20.6" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9.6" font-weight="700" letter-spacing="0.4" fill="#ffffff">LINE</text>
+          </svg>
+        </span>
+        <span class="txt"><span class="l">特典受け取り＆</span><span class="l">個別ロードマップ会に</span><span class="l">参加する！</span></span>
+        <span class="arrow">▶</span>
+      </button>
+    </div>
+    <p class="btn-note cta-todo">※リンクは準備中です。決まり次第ここに設置します</p>
   </div>
 
-  <div class="foot"></div>
 </div>
 
 <script>
@@ -405,12 +325,12 @@ const CONFIG = {
     count.textContent = 'あと ' + (d>0 ? d+'日 ' : '') + p(h)+'時間 '+p(m)+'分 '+p(ss)+'秒';
   }
 
-  var btns = document.querySelectorAll('button.cta');
+  var btns = document.querySelectorAll('button.btn');
   var todos = document.querySelectorAll('.cta-todo');
   if (CONFIG.LINE_URL) {
     Array.prototype.forEach.call(btns, function(b){
       var a = document.createElement('a');
-      a.className = 'cta';
+      a.className = 'btn';
       a.href = CONFIG.LINE_URL;
       a.rel = 'noopener';
       a.innerHTML = b.innerHTML;
