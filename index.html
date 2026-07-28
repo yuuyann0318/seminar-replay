@@ -20,7 +20,7 @@
   --amber-d:#b45309;
   --amber-l:#fff8ec;
   /* ── タイポスケール（比率1.5 で強い対比）── */
-  --t-display:clamp(78px,21.5vw,136px);
+  --t-display:clamp(36px,9.8vw,64px);
   --t-title:clamp(21px,5.6vw,32px);
   --t-h2:clamp(26px,6.6vw,36px);
   --t-h3:clamp(19px,4.8vw,23px);
@@ -60,14 +60,16 @@ body{
   padding:var(--s4) 18px var(--s4); text-align:center;
 }
 .hero .ttl{margin:0}
-.hero .k{
-  display:block; font-size:var(--t-title); font-weight:800;
-  line-height:1.4; color:var(--n-700);
+.hero .chip{
+  display:inline-block; margin-bottom:var(--s2);
+  padding:6px 20px; border-radius:999px;
+  background:var(--blue); color:var(--n-0);
+  font-size:var(--t-sm); font-weight:800; letter-spacing:.08em;
 }
 .hero .d{
-  display:block; margin-top:4px;
+  display:block;
   font-size:var(--t-display); font-weight:800;
-  line-height:1; letter-spacing:.02em; color:var(--blue);
+  line-height:1.18; letter-spacing:.01em; color:var(--n-950);
 }
 
 /* ══ 動画 ══ */
@@ -180,8 +182,8 @@ body{
 <!-- タイトル -->
 <header class="hero">
   <h1 class="ttl">
-    <span class="k">最新AI副業解禁セミナー</span>
-    <span class="d">録画</span>
+    <span class="chip">録画</span>
+    <span class="d">最新AI副業解禁セミナー</span>
   </h1>
 </header>
 
