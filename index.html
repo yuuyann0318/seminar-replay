@@ -11,25 +11,24 @@
 :root{
   /* ── 無彩色（R=G=B）── */
   --n-0:#ffffff; --n-50:#f5f5f5; --n-100:#e8e8e8; --n-200:#d4d4d4;
-  --n-500:#737373; --n-700:#404040; --n-900:#171717; --n-950:#0d0d0d;
+  --n-500:#737373; --n-700:#404040; --n-950:#0d0d0d;
   /* ── 有彩色は2色（色相環で補色関係）── */
-  --blue:#2563eb;      /* H 221° 主役・CTA・構造 */
+  --blue:#2563eb;   /* H 221° 主役・CTA・構造 */
   --blue-d:#1743a8;
   --blue-l:#eff4ff;
-  --amber:#f59e0b;     /* H  38° 締切・緊急（青の補色側）*/
+  --amber:#f59e0b;  /* H  38° 締切・参加特典（青の補色側）*/
   --amber-d:#b45309;
   --amber-l:#fff8ec;
-  /* ── タイポスケール（比率1.5 で強い対比）── */
-  --t-display:clamp(36px,9.8vw,64px);
-  --t-title:clamp(21px,5.6vw,32px);
-  --t-h2:clamp(26px,6.6vw,36px);
-  --t-h3:clamp(19px,4.8vw,23px);
-  --t-body:17px;
-  --t-sm:14px;
+  /* ── タイポスケール（縦画面で語が割れない上限に設定）── */
+  --t-display:clamp(30px,8.2vw,48px);
+  --t-h2:clamp(22px,5.8vw,30px);
+  --t-h3:clamp(17px,4.4vw,21px);
+  --t-body:16px;
+  --t-sm:13px;
   --t-xs:12px;
-  /* ── 余白スケール（4の倍数で反復）── */
-  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px;
-  --r:20px;
+  /* ── 余白スケール（反復）── */
+  --s1:8px; --s2:16px; --s3:24px; --s4:36px; --s5:56px; --s6:80px;
+  --r:18px;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -37,39 +36,41 @@ body{
   margin:0; padding:0;
   background:var(--n-50); color:var(--n-950);
   font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
-  font-size:var(--t-body); line-height:1.8; font-weight:500;
+  font-size:var(--t-body); line-height:1.85; font-weight:500;
   overflow-x:hidden;
 }
-.wrap{max-width:720px; margin:0 auto; padding:0 18px}
+.wrap{max-width:600px; margin:0 auto; padding:0 16px}
 
-/* ══ 締切バー（唯一の琥珀＝最優先の情報）══ */
+/* ── 日本語の改行制御：語のまとまりは割らない ── */
+.nb{white-space:nowrap}
+
+/* ══ 締切バー ══ */
 .limit{
   position:sticky; top:0; z-index:20;
   background:var(--n-950); color:var(--n-0); text-align:center;
-  padding:10px 16px 12px; padding-top:calc(10px + env(safe-area-inset-top));
+  padding:9px 12px 11px; padding-top:calc(9px + env(safe-area-inset-top));
   border-bottom:3px solid var(--amber);
 }
-.limit-l{font-size:var(--t-xs); font-weight:700; color:var(--amber)}
-.limit-c{font-size:clamp(20px,5.6vw,26px); font-weight:800; line-height:1.35; font-variant-numeric:tabular-nums}
+.limit-l{font-size:var(--t-xs); font-weight:700; color:var(--amber); line-height:1.5}
+.limit-c{font-size:clamp(19px,5.4vw,25px); font-weight:800; line-height:1.4; font-variant-numeric:tabular-nums}
 .limit.is-end .limit-l{display:none}
-.limit.is-end .limit-c{font-size:16px; color:var(--amber)}
+.limit.is-end .limit-c{font-size:15px; color:var(--amber)}
 
-/* ══ タイトル（最大の対比をつくる）══ */
+/* ══ タイトル ══ */
 .hero{
   background:var(--n-0); border-bottom:1px solid var(--n-100);
-  padding:var(--s4) 18px var(--s4); text-align:center;
+  padding:var(--s4) 16px var(--s4); text-align:center;
 }
-.hero .ttl{margin:0}
-.hero .chip{
+.ttl{margin:0}
+.chip{
   display:inline-block; margin-bottom:var(--s2);
-  padding:6px 20px; border-radius:999px;
+  padding:5px 18px; border-radius:999px;
   background:var(--blue); color:var(--n-0);
   font-size:var(--t-sm); font-weight:800; letter-spacing:.08em;
 }
-.hero .d{
-  display:block;
-  font-size:var(--t-display); font-weight:800;
-  line-height:1.18; letter-spacing:.01em; color:var(--n-950);
+.d{
+  display:block; font-size:var(--t-display); font-weight:800;
+  line-height:1.3; letter-spacing:.01em; color:var(--n-950);
 }
 
 /* ══ 動画 ══ */
@@ -77,13 +78,12 @@ body{
 .frame{
   display:block; width:100%; aspect-ratio:16/9;
   background:var(--n-950); border-radius:var(--r); overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.16);
+  box-shadow:0 8px 24px rgba(0,0,0,.16);
 }
 .frame iframe{width:100%; height:100%; border:0; display:block}
 
 /* ══ セクション見出し（反復パターン）══ */
 .sec{padding:var(--s5) 0 0}
-.sec-h{margin:0; text-align:center; font-size:var(--t-h2); font-weight:800; line-height:1.35}
 .sec-k{
   display:block; margin:0 auto var(--s1); width:fit-content;
   padding:4px 14px; border-radius:999px;
@@ -91,64 +91,92 @@ body{
   font-size:var(--t-xs); font-weight:800;
 }
 .sec-k.is-amber{background:var(--amber-l); color:var(--amber-d)}
-.sec-lead{margin:var(--s2) 0 0; text-align:center; font-size:var(--t-sm); font-weight:600; color:var(--n-500)}
+.sec-h{margin:0; text-align:center; font-size:var(--t-h2); font-weight:800; line-height:1.45}
+.sec-lead{margin:var(--s2) 0 0; text-align:center; font-size:var(--t-sm); font-weight:600; color:var(--n-500); line-height:1.9}
 
 /* ══ CTA ══ */
 .cta{padding:var(--s5) 0 0; text-align:center}
-.cta-h{margin:0 0 var(--s2); font-size:var(--t-h2); font-weight:800; line-height:1.35}
+.cta-h{margin:0 0 var(--s2); font-size:var(--t-h2); font-weight:800; line-height:1.45}
 .due{
   display:inline-flex; align-items:center; gap:8px;
-  margin:0 0 var(--s2); padding:8px 18px; border-radius:999px;
+  margin:0 0 var(--s2); padding:7px 16px; border-radius:999px;
   background:var(--amber-l); border:2px solid var(--amber);
   font-size:var(--t-sm); font-weight:800; color:var(--amber-d);
 }
-.due .dot{width:9px; height:9px; border-radius:50%; background:var(--amber); flex:0 0 auto}
+.due .dot{width:8px; height:8px; border-radius:50%; background:var(--amber); flex:0 0 auto}
 .pulse{display:block; transform-origin:center; animation:p 2s ease-in-out infinite; will-change:transform}
-@keyframes p{0%,100%{transform:scale(1)} 50%{transform:scale(var(--pulse,1.03))}}
+@keyframes p{0%,100%{transform:scale(1)} 50%{transform:scale(var(--pulse,1.028))}}
 .pulse:hover,.pulse:focus-within{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.pulse{animation:none}}
 .btn{
-  display:flex; align-items:center; justify-content:center; gap:14px;
-  width:100%; min-height:96px; padding:18px 16px;
-  background:var(--blue); color:var(--n-0);
-  font-family:inherit; font-size:clamp(18px,4.8vw,25px); font-weight:800; line-height:1.4;
+  position:relative; overflow:hidden; isolation:isolate;
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  width:100%; min-height:88px; padding:16px 14px;
+  color:var(--n-0);
+  font-family:inherit; font-size:clamp(16px,4.3vw,21px); font-weight:800; line-height:1.45;
   text-align:center; text-decoration:none;
-  border:0; border-radius:var(--r);
-  box-shadow:0 7px 0 var(--blue-d), 0 16px 34px rgba(37,99,235,.30);
+  border:3px solid transparent; border-radius:var(--r);
+  /* 金枠（琥珀の色相内）＋青の面 */
+  background:
+    linear-gradient(180deg,#3b7bf7 0%,var(--blue) 55%,var(--blue-d) 100%) padding-box,
+    linear-gradient(105deg,#8a6a1f 0%,#f6dc9a 26%,#e6b954 46%,#fff3cf 56%,#c99a34 72%,#8a6a1f 100%) border-box;
+  box-shadow:0 6px 0 var(--blue-d), 0 14px 32px rgba(37,99,235,.34);
   cursor:pointer;
 }
-.btn:active{transform:translateY(5px); box-shadow:0 2px 0 var(--blue-d)}
-.btn[disabled]{background:var(--n-200); box-shadow:0 7px 0 var(--n-500); color:var(--n-0); cursor:default}
+/* 斜めに走る光沢 */
+.btn::after{
+  content:""; position:absolute; z-index:2; pointer-events:none;
+  top:-60%; left:-75%; width:42%; height:220%;
+  transform:rotate(20deg);
+  background:linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.28) 38%,
+    rgba(255,255,255,.75) 50%,
+    rgba(255,255,255,.28) 62%,
+    rgba(255,255,255,0) 100%);
+  animation:shine 3.4s ease-in-out infinite;
+}
+@keyframes shine{
+  0%{left:-75%} 42%{left:135%} 100%{left:135%}
+}
+@media (prefers-reduced-motion:reduce){ .btn::after{animation:none; opacity:0} }
+.btn:active{transform:translateY(4px); box-shadow:0 2px 0 var(--blue-d)}
+.btn[disabled]{
+  background:linear-gradient(180deg,#dcdcdc,var(--n-200)) padding-box,
+             linear-gradient(105deg,#b9b9b9,#e6e6e6 50%,#b9b9b9) border-box;
+  box-shadow:0 6px 0 var(--n-500); color:var(--n-0); cursor:default;
+}
+.btn[disabled]::after{animation:none; opacity:0}
 .btn .mark{
-  flex:0 0 auto; width:52px; height:52px; background:var(--n-0); border-radius:14px;
+  flex:0 0 auto; width:46px; height:46px; background:var(--n-0); border-radius:12px;
   display:flex; align-items:center; justify-content:center;
 }
 .btn .txt{flex:0 1 auto; min-width:0}
 .btn .txt .l{display:block; white-space:nowrap}
-.btn .go{flex:0 0 auto; font-size:20px}
+.btn .go{flex:0 0 auto; font-size:18px}
 .btn-note{margin:var(--s2) 0 0; font-size:var(--t-sm); font-weight:700; color:var(--amber-d)}
 
 /* ══ 特典カード（反復パターン）══ */
 .gifts{list-style:none; margin:var(--s3) 0 0; padding:0}
-.gifts li{margin:0 0 12px}
+.gifts li{margin:0 0 10px}
 .gifts li:last-child{margin-bottom:0}
 .g{
-  display:flex; align-items:center; gap:14px;
+  display:flex; align-items:center; gap:12px;
   background:var(--n-0); border:1px solid var(--n-100); border-radius:var(--r);
-  padding:16px; text-decoration:none; color:var(--n-950);
+  padding:14px; text-decoration:none; color:var(--n-950);
   box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 .g:active{transform:translateY(2px)}
 .g .n{
-  flex:0 0 auto; width:48px; height:48px; border-radius:50%;
+  flex:0 0 auto; width:44px; height:44px; border-radius:50%;
   background:var(--blue); color:var(--n-0);
-  font-size:18px; font-weight:800;
+  font-size:17px; font-weight:800;
   display:flex; align-items:center; justify-content:center;
 }
 .g-t{flex:1 1 auto; min-width:0}
 .g-1{display:block; font-size:var(--t-xs); font-weight:700; color:var(--n-500); line-height:1.7}
-.g-2{display:block; font-size:var(--t-h3); font-weight:800; line-height:1.4}
-.g-a{flex:0 0 auto; font-size:24px; font-weight:800; color:var(--blue)}
+.g-2{display:block; font-size:var(--t-h3); font-weight:800; line-height:1.45}
+.g-a{flex:0 0 auto; font-size:22px; font-weight:800; color:var(--blue)}
 .g.is-locked{background:var(--amber-l); border-color:var(--amber)}
 .g.is-locked .n{background:var(--n-0); color:var(--amber-d); border:2px solid var(--amber)}
 
@@ -158,16 +186,16 @@ body{
   background:var(--n-0); border:1px solid var(--n-100); border-radius:var(--r);
   padding:var(--s3) var(--s2); text-align:center;
 }
-.ended-in h2{margin:0 0 var(--s1); font-size:var(--t-h3); font-weight:800}
-.ended-in p{margin:0; font-size:var(--t-sm); font-weight:600; color:var(--n-500)}
+.ended-in h2{margin:0 0 var(--s1); font-size:var(--t-h3); font-weight:800; line-height:1.5}
+.ended-in p{margin:0; font-size:var(--t-sm); font-weight:600; color:var(--n-500); line-height:1.9}
 
 .foot{height:var(--s6)}
 
-@media (max-width:400px){
-  .btn{gap:10px; min-height:86px; padding:16px 12px}
-  .btn .mark{width:44px; height:44px; border-radius:12px}
-  .g{gap:11px; padding:14px 13px}
-  .g .n{width:42px; height:42px; font-size:16px}
+@media (max-width:340px){
+  .btn{gap:9px; min-height:80px; padding:14px 10px}
+  .btn .mark{width:40px; height:40px; border-radius:10px}
+  .g{gap:10px; padding:12px 11px}
+  .g .n{width:38px; height:38px; font-size:15px}
 }
 </style>
 </head>
@@ -175,7 +203,7 @@ body{
 
 <!-- 締切バー -->
 <div class="limit" id="limit">
-  <div class="limit-l">個別ロードマップ作成会 お申し込み締切</div>
+  <div class="limit-l"><span class="nb">個別ロードマップ作成会</span><wbr> <span class="nb">お申し込み締切</span></div>
   <div class="limit-c" id="count">残り時間を計算しています</div>
 </div>
 
@@ -183,7 +211,7 @@ body{
 <header class="hero">
   <h1 class="ttl">
     <span class="chip">録画</span>
-    <span class="d">最新AI副業解禁セミナー</span>
+    <span class="d"><span class="nb">最新AI副業</span><wbr><span class="nb">解禁セミナー</span></span>
   </h1>
 </header>
 
@@ -197,19 +225,19 @@ body{
   <!-- 終了パネル -->
   <section class="ended" id="ended">
     <div class="ended-in">
-      <h2>お申し込みの受付は終了しました</h2>
-      <p>ご覧いただきありがとうございました。次回のご案内は公式LINEでお届けします。</p>
+      <h2><span class="nb">お申し込みの受付は</span><wbr><span class="nb">終了しました</span></h2>
+      <p><span class="nb">ご覧いただき</span><wbr><span class="nb">ありがとうございました。</span><wbr><span class="nb">次回のご案内は</span><wbr><span class="nb">公式LINEでお届けします。</span></p>
     </div>
   </section>
 
   <!-- CTA① -->
   <section class="cta">
-    <h2 class="cta-h">個別ロードマップ作成会に<br>参加する</h2>
-    <p class="due"><span class="dot"></span>7月30日（木）23:59 まで</p>
+    <h2 class="cta-h"><span class="nb">個別ロードマップ</span><wbr><span class="nb">作成会に参加する</span></h2>
+    <p class="due"><span class="dot"></span><span class="nb">7月31日（金）23:59 まで</span></p>
     <div class="pulse">
       <button class="btn" disabled>
         <span class="mark" aria-hidden="true">
-          <svg viewBox="0 0 44 44" width="40" height="40">
+          <svg viewBox="0 0 44 44" width="36" height="36">
             <path d="M22 6.5c8.8 0 16 5.7 16 12.7 0 4.2-2.6 8-6.5 10.3-3 1.9-7 3.2-8.5 3.6-.6.2-1-.2-.9-.9l.4-2.4c.1-.6-.2-1-.9-1.1C14 27.3 6 23.6 6 19.2 6 12.2 13.2 6.5 22 6.5z" fill="#06c755"/>
             <text x="22" y="20.6" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9.6" font-weight="700" letter-spacing="0.4" fill="#ffffff">LINE</text>
           </svg>
@@ -218,7 +246,7 @@ body{
         <span class="go" aria-hidden="true">▶</span>
       </button>
     </div>
-    <p class="btn-note cta-todo">※リンクは準備中です。決まり次第ここに設置します</p>
+    <p class="btn-note cta-todo">※リンクは準備中です</p>
   </section>
 
   <!-- 無料特典 -->
@@ -228,27 +256,27 @@ body{
     <ul class="gifts">
       <li><a class="g" href="https://yuuyann0318.github.io/ai-shorts-monetize-map/" target="_blank" rel="noopener">
         <span class="n">01</span>
-        <span class="g-t"><span class="g-1">AIショート動画</span><span class="g-2">収益化マップ</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">AIショート動画</span></span><span class="g-2"><span class="nb">収益化マップ</span></span></span>
         <span class="g-a" aria-hidden="true">›</span>
       </a></li>
       <li><a class="g" href="https://yuuyann0318.github.io/ai-fukugyo-ai-top3/" target="_blank" rel="noopener">
         <span class="n">02</span>
-        <span class="g-t"><span class="g-1">AI副業</span><span class="g-2">いま始めるならTOP3</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">AI副業</span></span><span class="g-2"><span class="nb">いま始めるなら</span><wbr><span class="nb">TOP3</span></span></span>
         <span class="g-a" aria-hidden="true">›</span>
       </a></li>
       <li><a class="g" href="https://yuuyann0318.github.io/ai-fukugyo-roadmap-tokuten/" target="_blank" rel="noopener">
         <span class="n">03</span>
-        <span class="g-t"><span class="g-1">月30万円目指す</span><span class="g-2">完全ロードマップ</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">月30万円を目指す</span></span><span class="g-2"><span class="nb">完全ロードマップ</span></span></span>
         <span class="g-a" aria-hidden="true">›</span>
       </a></li>
       <li><a class="g" href="https://yuuyann0318.github.io/ai-short-video-idea-tokuten/" target="_blank" rel="noopener">
         <span class="n">04</span>
-        <span class="g-t"><span class="g-1">超初心者向け</span><span class="g-2">AI講座</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">超初心者向け</span></span><span class="g-2"><span class="nb">AI講座</span></span></span>
         <span class="g-a" aria-hidden="true">›</span>
       </a></li>
       <li><a class="g" href="https://yuuyann0318.github.io/ai-short-video-funnel-tokuten/" target="_blank" rel="noopener">
         <span class="n">05</span>
-        <span class="g-t"><span class="g-1">AI×SNS</span><span class="g-2">収益化マニュアル</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">AI×SNS</span></span><span class="g-2"><span class="nb">収益化マニュアル</span></span></span>
         <span class="g-a" aria-hidden="true">›</span>
       </a></li>
     </ul>
@@ -257,32 +285,32 @@ body{
   <!-- 参加特典 -->
   <section class="sec">
     <span class="sec-k is-amber">参加した方だけ</span>
-    <h2 class="sec-h">作成会で受け取れる特典</h2>
+    <h2 class="sec-h"><span class="nb">作成会で</span><wbr><span class="nb">受け取れる特典</span></h2>
     <ul class="gifts">
       <li><span class="g is-locked">
         <span class="n">06</span>
-        <span class="g-t"><span class="g-1">伸びる理由と改善点をAIが分析</span><span class="g-2">ショート動画リサーチAI</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">伸びる理由と</span><wbr><span class="nb">改善点をAIが分析</span></span><span class="g-2"><span class="nb">ショート動画</span><wbr><span class="nb">リサーチAI</span></span></span>
       </span></li>
       <li><span class="g is-locked">
         <span class="n">07</span>
-        <span class="g-t"><span class="g-1">面倒な登録作業をまとめて自動化</span><span class="g-2">アカウント作成AI</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">面倒な登録作業を</span><wbr><span class="nb">まとめて自動化</span></span><span class="g-2"><span class="nb">アカウント作成AI</span></span></span>
       </span></li>
       <li><span class="g is-locked">
         <span class="n">08</span>
-        <span class="g-t"><span class="g-1">企画から投稿までの手順をまとめた1冊</span><span class="g-2">動画作成AIマニュアル</span></span>
+        <span class="g-t"><span class="g-1"><span class="nb">企画から投稿までを</span><wbr><span class="nb">まとめた1冊</span></span><span class="g-2"><span class="nb">動画作成AI</span><wbr><span class="nb">マニュアル</span></span></span>
       </span></li>
     </ul>
-    <p class="sec-lead">この3点は、個別ロードマップ作成会にご参加いただいた方にお渡しします。</p>
+    <p class="sec-lead"><span class="nb">この3点は、</span><wbr><span class="nb">個別ロードマップ作成会に</span><wbr><span class="nb">ご参加いただいた方に</span><wbr><span class="nb">お渡しします。</span></p>
   </section>
 
   <!-- CTA② -->
   <section class="cta">
-    <h2 class="cta-h">この特典を受け取る</h2>
-    <p class="due"><span class="dot"></span>7月30日（木）23:59 まで</p>
+    <h2 class="cta-h"><span class="nb">この特典を受け取る</span></h2>
+    <p class="due"><span class="dot"></span><span class="nb">7月31日（金）23:59 まで</span></p>
     <div class="pulse">
       <button class="btn" disabled>
         <span class="mark" aria-hidden="true">
-          <svg viewBox="0 0 44 44" width="40" height="40">
+          <svg viewBox="0 0 44 44" width="36" height="36">
             <path d="M22 6.5c8.8 0 16 5.7 16 12.7 0 4.2-2.6 8-6.5 10.3-3 1.9-7 3.2-8.5 3.6-.6.2-1-.2-.9-.9l.4-2.4c.1-.6-.2-1-.9-1.1C14 27.3 6 23.6 6 19.2 6 12.2 13.2 6.5 22 6.5z" fill="#06c755"/>
             <text x="22" y="20.6" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9.6" font-weight="700" letter-spacing="0.4" fill="#ffffff">LINE</text>
           </svg>
@@ -291,7 +319,7 @@ body{
         <span class="go" aria-hidden="true">▶</span>
       </button>
     </div>
-    <p class="btn-note cta-todo">※リンクは準備中です。決まり次第ここに設置します</p>
+    <p class="btn-note cta-todo">※リンクは準備中です</p>
   </section>
 
   <div class="foot"></div>
@@ -301,7 +329,7 @@ body{
 // ===== ここだけ書き換えれば運用できる =====
 const CONFIG = {
   // 申し込み締切（JSTオフセットを明示。端末のタイムゾーン設定に依存させない）
-  DEADLINE: "2026-07-30T23:59:59+09:00",
+  DEADLINE: "2026-07-31T23:59:59+09:00",
 
   // 動画URL（UTAGE）
   VIDEO_URL: "https://utage-system.com/video/OZxIqf3HQfLP",
