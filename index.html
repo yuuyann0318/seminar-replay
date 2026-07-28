@@ -23,7 +23,7 @@
   --cta:#1a4fd6;       /* CTA */
   --cta-d:#0f327f;
   /* ── 書体 ── */
-  --sans:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
   --disp:var(--sans);
   /* ── 余白スケール（反復） ── */
   --s1:8px; --s2:14px; --s3:22px; --s4:34px; --s5:52px;
@@ -32,7 +32,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family:var(--sans); font-weight:700;
+  font-family:var(--sans); font-weight:500;
   font-size:16px; line-height:1.85;
   color:var(--ink); background:var(--n-50);
   -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased;
@@ -55,12 +55,12 @@ body{
   text-align:center;
 }
 .limit-l{
-  font-size:clamp(11px,3.2vw,13px); font-weight:800;
+  font-size:clamp(11px,3.2vw,13px); font-weight:700;
   letter-spacing:.06em; color:#a8c0f2; white-space:nowrap;
 }
 .limit-c{
   margin-top:2px;
-  font-size:clamp(17px,4.9vw,21px); font-weight:800;
+  font-size:clamp(17px,4.9vw,21px); font-weight:700;
   color:#fff; font-variant-numeric:tabular-nums;
   letter-spacing:.04em; white-space:nowrap;
 }
@@ -72,14 +72,14 @@ body{
 .ttl{margin:0}
 .eyebrow{
   display:block; font-family:var(--sans);
-  font-size:clamp(12px,3.4vw,14px); font-weight:800;
+  font-size:clamp(12px,3.4vw,14px); font-weight:700;
   letter-spacing:.16em; text-indent:.16em; color:var(--blue);
 }
 .rec{
   display:block; margin-top:var(--s3);
   padding:var(--s2) 0 calc(var(--s2) + 3px);
   border-top:1px solid var(--blue-ln); border-bottom:1px solid var(--blue-ln);
-  font-family:var(--disp); font-weight:800;
+  font-family:var(--disp); font-weight:700;
   font-size:clamp(40px,12vw,60px);
   letter-spacing:.2em; text-indent:.2em; line-height:1.2;
   background:var(--blue-grad); -webkit-background-clip:text; background-clip:text;
@@ -97,19 +97,19 @@ body{
 .frame-in iframe{flex:1 1 auto; align-self:stretch; border:0; display:block}
 .stage .note{
   margin:var(--s2) auto 0; text-align:center;
-  font-size:13px; font-weight:600; color:var(--ink-3); line-height:1.8;
+  font-size:13px; font-weight:500; color:var(--ink-3); line-height:1.8;
 }
 
 /* ══ セクション見出し（反復パターン） ══ */
 .sec{padding:var(--s5) 0 0}
 .sec-label{
   display:block; text-align:center;
-  font-size:12px; font-weight:800; letter-spacing:.3em; text-indent:.3em;
+  font-size:12px; font-weight:700; letter-spacing:.3em; text-indent:.3em;
   color:var(--blue);
 }
 .sec-h{
   margin:var(--s1) 0 0; text-align:center;
-  font-family:var(--disp); font-weight:800;
+  font-family:var(--disp); font-weight:700;
   font-size:clamp(22px,6vw,31px); letter-spacing:.01em;
   color:var(--ink); line-height:1.5;
 }
@@ -119,11 +119,11 @@ body{
 .cta-block{padding:var(--s5) 0 0; text-align:center}
 .cta-lead{
   margin:0 0 var(--s1);
-  font-family:var(--disp); font-weight:800;
+  font-family:var(--disp); font-weight:700;
   font-size:clamp(19px,5.2vw,25px); letter-spacing:.01em;
   color:var(--ink); line-height:1.55;
 }
-.cta-due{margin:0 0 var(--s3); font-size:13px; font-weight:800; letter-spacing:.01em; color:var(--blue)}
+.cta-due{margin:0 0 var(--s3); font-size:13px; font-weight:700; letter-spacing:.01em; color:var(--blue)}
 .pulse{display:block; transform-origin:center; animation:ctaPulse 2s ease-in-out infinite; will-change:transform}
 @keyframes ctaPulse{0%,100%{transform:scale(1)} 50%{transform:scale(var(--pulse,1.038))}}
 .pulse:hover,.pulse:focus-within{animation-play-state:paused}
@@ -136,7 +136,7 @@ body{
   border:1px solid var(--cta-d); border-radius:6px;
   box-shadow:0 8px 22px rgba(26,79,214,.32);
   color:#fff; font-family:var(--sans);
-  font-size:clamp(14px,4.1vw,22px); font-weight:800; line-height:1.5; letter-spacing:.01em;
+  font-size:clamp(14px,4.1vw,22px); font-weight:700; line-height:1.5; letter-spacing:.01em;
   text-decoration:none; cursor:pointer;
 }
 .cta:active{transform:translateY(2px)}
@@ -149,7 +149,7 @@ body{
 .cta .txt{flex:0 1 auto; min-width:0; text-align:center}
 .cta .txt .l{display:block; white-space:nowrap}
 .cta .go{flex:0 0 auto; width:28px; height:28px}
-.cta-todo{margin:var(--s2) 0 0; font-size:13px; font-weight:800; color:var(--blue)}
+.cta-todo{margin:var(--s2) 0 0; font-size:13px; font-weight:700; color:var(--blue)}
 
 /* ══ 特典リスト（反復パターン） ══ */
 .gifts{list-style:none; margin:0; padding:0}
@@ -166,12 +166,12 @@ body{
   flex:0 0 auto; width:38px; height:38px; border-radius:4px;
   border:1px solid var(--blue-ln); background:var(--n-50);
   display:flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:800; letter-spacing:.01em; color:var(--blue);
+  font-size:13px; font-weight:700; letter-spacing:.01em; color:var(--blue);
 }
 .g-t{flex:1 1 auto; min-width:0}
-.g-1{display:block; font-size:12px; font-weight:600; letter-spacing:.01em; color:var(--ink-3); line-height:1.6}
+.g-1{display:block; font-size:12px; font-weight:500; letter-spacing:.01em; color:var(--ink-3); line-height:1.6}
 .g-2{
-  display:block; font-family:var(--disp); font-weight:800;
+  display:block; font-family:var(--disp); font-weight:700;
   font-size:clamp(16px,4.3vw,20px); letter-spacing:.01em;
   color:var(--ink); line-height:1.5;
 }
@@ -181,7 +181,7 @@ body{
 .gift-cond{
   margin:var(--s3) 0 0; padding-top:var(--s3);
   border-top:1px solid var(--hair-2);
-  text-align:center; font-size:13px; font-weight:800;
+  text-align:center; font-size:13px; font-weight:700;
   letter-spacing:.01em; color:var(--blue); line-height:1.9;
 }
 
@@ -189,10 +189,10 @@ body{
 .ended{display:none; padding:var(--s4) 0 0; text-align:center}
 .ended-box{border:1px solid var(--blue-ln); background:var(--n-50); padding:var(--s4) var(--s3)}
 .ended-box h2{
-  margin:0 0 var(--s2); font-family:var(--disp); font-weight:800;
+  margin:0 0 var(--s2); font-family:var(--disp); font-weight:700;
   font-size:20px; letter-spacing:.01em; color:var(--blue); line-height:1.6;
 }
-.ended-box p{margin:0; font-size:14px; font-weight:600; color:var(--ink-2); line-height:2}
+.ended-box p{margin:0; font-size:14px; font-weight:500; color:var(--ink-2); line-height:2}
 
 .foot{margin-top:var(--s5); border-top:1px solid var(--hair-2)}
 
